@@ -339,7 +339,9 @@ PssSimpleParserTest >> testLinearGradient [
 	declaration := rule declarations first.
 	self assert: declaration property equals: #color.
 	
-	function := (PssFunctionValue value: #linearGradient) args: { Color red. Color yellow } asArray.
+	function := (PssFunctionValue value: #linearGradient) args: {
+		PssColorValue value: Color red.
+		PssColorValue value: Color yellow } asArray.
 	self assert: declaration value equals: function. 
 ]
 
@@ -381,11 +383,10 @@ PssSimpleParserTest >> testLinearGradientMultipleColorStops [
 	declaration := rule declarations first.
 	self assert: declaration property equals: #color.
 	
-	function := (PssFunctionValue value: #linearGradient) args: 
-	{ 
-		Color red. 
-		Color yellow.
-		Color green
+	function := (PssFunctionValue value: #linearGradient) args: { 
+		PssColorValue value: Color red. 
+		PssColorValue value: Color yellow.
+		PssColorValue value: Color green
 	} asArray.
 	self assert: declaration value equals: function.
 ]
@@ -404,13 +405,15 @@ PssSimpleParserTest >> testLinearGradientMultipleColorStopsToRight [
 	self assert: declaration property equals: #color.
 	
 	function := (PssFunctionValue value: #linearGradient) args: {
-		#(#to #right). 
-		Color red. 
-		Color orange.
-		Color yellow.
-		Color green.
-		Color blue.
-		Color purple
+		PssArrayValue value: {
+			PssSymbolValue value: #to.
+			PssSymbolValue value: #right}. 
+		PssColorValue value: Color red. 
+		PssColorValue value: Color orange.
+		PssColorValue value: Color yellow.
+		PssColorValue value: Color green.
+		PssColorValue value: Color blue.
+		PssColorValue value: Color purple
 	} asArray.
 	self assert: declaration value equals: function. 
 ]
@@ -429,7 +432,9 @@ PssSimpleParserTest >> testLinearGradientRgba [
 	self assert: declaration property equals: #color.
 	
 	function := (PssFunctionValue value: #linearGradient) args: {
-		#(#to #right).
+		PssArrayValue value: {
+			PssSymbolValue value: #to.
+			PssSymbolValue value: #right}.
 		(PssFunctionValue value: #rgba) args: { 255. 0. 0. 0 } asArray.
 		(PssFunctionValue value: #rgba) args: { 255. 0. 0. 1 } asArray
 	} asArray.
@@ -450,9 +455,11 @@ PssSimpleParserTest >> testLinearGradientToRight [
 	self assert: declaration property equals: #color.
 	
 	function := (PssFunctionValue value: #linearGradient) args: {
-		#(#to #right).
-		Color red.
-		Color yellow
+		PssArrayValue value: {
+			PssSymbolValue value: #to.
+			PssSymbolValue value: #right}.
+		PssColorValue value: Color red.
+		PssColorValue value: Color yellow
 	} asArray.
 	self assert: declaration value equals: function. 
 ]
@@ -575,9 +582,9 @@ PssSimpleParserTest >> testRadialGradient [
 	self assert: declaration property equals: #color.
 	
 	function := (PssFunctionValue value: #radialGradient) args: { 
-		Color red. 
-		Color yellow.
-		Color green
+		PssColorValue value: Color red. 
+		PssColorValue value: Color yellow.
+		PssColorValue value: Color green
 	} asArray.
 	self assert: declaration value equals: function.
 ]

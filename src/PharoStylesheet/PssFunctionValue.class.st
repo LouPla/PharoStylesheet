@@ -42,6 +42,21 @@ PssFunctionValue >> linearGradient: aLinearGradient [
 	aLinearGradient storeColor: self value.
 ]
 
+{ #category : #properties }
+PssFunctionValue >> radialGradient: aRadialGradient [
+	aRadialGradient storeColor: self value.
+]
+
+{ #category : #properties }
+PssFunctionValue >> repeatingLinearGradient: aRepeatingLinearGradient [
+	aRepeatingLinearGradient storeColor: self value.
+]
+
+{ #category : #properties }
+PssFunctionValue >> repeatingRadialGradient: aRepeatingRadialGradient [
+	aRepeatingRadialGradient storeColor: self value.
+]
+
 { #category : #accessing }
 PssFunctionValue >> value [ 
 	^ PssFunctionBuilder perform: value asMutator with: self args

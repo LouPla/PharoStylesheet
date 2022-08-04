@@ -83,6 +83,21 @@ PssArrayValue >> outline: aBorderValue [
 	self value do: [ :e | e outline: aBorderValue ]
 ]
 
+{ #category : #properties }
+PssArrayValue >> radialGradient: aRadialGradient [
+	self value do: [ :e | e radialGradient: aRadialGradient ]
+]
+
+{ #category : #properties }
+PssArrayValue >> repeatingLinearGradient: aRepeatingLinearGradient [
+	self value do: [ :e | e repeatingLinearGradient: aRepeatingLinearGradient ]
+]
+
+{ #category : #properties }
+PssArrayValue >> repeatingRadialGradient: aRepeatingRadialGradient [
+	self value do: [ :e | e repeatingRadialGradient: aRepeatingRadialGradient ]
+]
+
 { #category : #initialization }
 PssArrayValue >> setSidePropertyForFourValues [
 	sidePropertyBlock := [ :aSideProperty :aMutator |

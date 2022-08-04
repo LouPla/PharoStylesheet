@@ -13,6 +13,30 @@ PssFunctionBuilder class >> linearGradient: args [
 ]
 
 { #category : #functions }
+PssFunctionBuilder class >> radialGradient: args [
+	| gradient |
+	gradient := PssRadialGradientValue new.
+	args do: [ :arg | arg radialGradient: gradient ].
+	^ gradient
+]
+
+{ #category : #functions }
+PssFunctionBuilder class >> repeatingLinearGradient: args [
+	| gradient |
+	gradient := PssRepeatingLinearGradientValue new.
+	args do: [ :arg | arg repeatingLinearGradient: gradient ].
+	^ gradient
+]
+
+{ #category : #functions }
+PssFunctionBuilder class >> repeatingRadialGradient: args [
+	| gradient |
+	gradient := PssRepeatingRadialGradientValue new.
+	args do: [ :arg | arg repeatingRadialGradient: gradient ].
+	^ gradient
+]
+
+{ #category : #functions }
 PssFunctionBuilder class >> rgb: args [ 
 	^ Color r: args first g: args second b: args third range: 255
 ]

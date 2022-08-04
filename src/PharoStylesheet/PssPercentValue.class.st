@@ -18,3 +18,18 @@ PssPercentValue >> computeValueFrom: aTargetNode property: aSymbol [
 PssPercentValue >> linearGradient: aLinearGradient [
 	aLinearGradient setStoredColorAt: self value
 ]
+
+{ #category : #properties }
+PssPercentValue >> radialGradient: aRadialGradient [
+	aRadialGradient setStoredColorAt: self value
+]
+
+{ #category : #properties }
+PssPercentValue >> repeatingLinearGradient: aRepeatingLinearGradient [
+	aRepeatingLinearGradient setStoredColorAt: self value
+]
+
+{ #category : #properties }
+PssPercentValue >> repeatingRadialGradient: aRepeatingRadialGradient [
+	aRepeatingRadialGradient setStoredColorAt: self value
+]

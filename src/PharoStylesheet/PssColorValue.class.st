@@ -23,3 +23,18 @@ PssColorValue >> linearGradient: aLinearGradient [
 PssColorValue >> outline: aBorderValue [
 	aBorderValue color: self
 ]
+
+{ #category : #properties }
+PssColorValue >> radialGradient: aRadialGradient [
+	aRadialGradient storeColor: self value
+]
+
+{ #category : #properties }
+PssColorValue >> repeatingLinearGradient: aRepeatingLinearGradient [
+	aRepeatingLinearGradient storeColor: self value
+]
+
+{ #category : #properties }
+PssColorValue >> repeatingRadialGradient: aRepeatingRadialGradient [
+	aRepeatingRadialGradient storeColor: self value
+]

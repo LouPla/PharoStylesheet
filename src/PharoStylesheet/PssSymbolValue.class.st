@@ -37,3 +37,24 @@ PssSymbolValue >> linearGradient: aLinearGradient [
 PssSymbolValue >> outline: aBorderValue [
 	aBorderValue style: (PssBorderStyle perform: self value)
 ]
+
+{ #category : #properties }
+PssSymbolValue >> radialGradient: aRadialGradient [
+	self value = #circle ifTrue: [ ^ self ].
+	self value = #ellipse ifTrue: [ ^ self ]
+]
+
+{ #category : #properties }
+PssSymbolValue >> repeatingLinearGradient: aRepeatingLinearGradient [
+	self value = #to ifTrue: [ ^ self ].
+	self value = #right ifTrue: [ ^ aRepeatingLinearGradient toRight ].
+	self value = #bottom ifTrue: [ ^ aRepeatingLinearGradient toBottom ].
+	self value = #deg ifTrue: [ ^ aRepeatingLinearGradient setAngleInDegree ].
+	self halt.
+]
+
+{ #category : #properties }
+PssSymbolValue >> repeatingRadialGradient: aRepeatingRadialGradient [
+	self value = #circle ifTrue: [ ^ self ].
+	self value = #ellipse ifTrue: [ ^ self ]
+]

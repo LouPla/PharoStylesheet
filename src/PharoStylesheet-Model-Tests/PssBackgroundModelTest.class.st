@@ -97,7 +97,7 @@ PssBackgroundModelTest >> testBackgroundImage [
 	
 	property := declaration model.
 	self assert: property class equals: PssBackgroundModel.
-	self assert: property image name equals: 'paper.gif'.
+	self assert: property image name first equals: 'paper.gif'.
 	
 	self assert: property attachment equals: nil.
 	self assert: property color equals: nil.
